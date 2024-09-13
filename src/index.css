@@ -1,0 +1,84 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.screen {
+    background-color: #111827;
+    color: #f3f4f6;
+    width: 100%;
+    padding: 20px;
+    font-size: 48px;
+    border-radius: 8px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.button {
+    width: 22%;
+    margin: 8px 0;
+    font-size: 24px;
+    padding: 15px;
+    background-color: #4b5563;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #6b7280;
+    transform: scale(1.05);
+}
+
+.operation {
+    background-color: #ef4444;
+}
+
+.clear {
+    background-color: #f59e0b;
+}
+
+@media (max-width: 768px) {
+    .screen {
+        font-size: 36px;
+        padding: 15px;
+    }
+
+    .button {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .screen {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    .button {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
