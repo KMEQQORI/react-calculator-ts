@@ -8,6 +8,7 @@ interface CalculatorWrapperProps {
 	operationButtonColor?: string;
 	equalButtonColor?: string;
 	clearButtonColor?: string;
+	scientificButtonColor?: string;
 }
 
 export const ReactCalculator: React.FC<CalculatorWrapperProps> = ({
@@ -15,10 +16,25 @@ export const ReactCalculator: React.FC<CalculatorWrapperProps> = ({
 	numberButtonColor,
 	operationButtonColor,
 	equalButtonColor,
-	clearButtonColor
+	clearButtonColor,
+	scientificButtonColor
 }) => {
 	switch (type) {
-		case 'simple':
+		case 'scientific':
+			return (
+				<ReactScientificCalculator
+					numberButtonColor={numberButtonColor}
+					operationButtonColor={operationButtonColor}
+					equalButtonColor={equalButtonColor}
+					clearButtonColor={clearButtonColor}
+					scientificButtonColor={scientificButtonColor}
+				/>
+			);
+		case 'graphing':
+			return <div>Graphing Calculator not yet implemented</div>;
+		case 'programmer':
+			return <div>Programmer Calculator not yet implemented</div>;
+		default:
 			return (
 				<ReactSimpleCalculator
 					numberButtonColor={numberButtonColor}
@@ -27,20 +43,5 @@ export const ReactCalculator: React.FC<CalculatorWrapperProps> = ({
 					clearButtonColor={clearButtonColor}
 				/>
 			);
-		case 'scientific':
-			return (
-				<ReactScientificCalculator
-					numberButtonColor={numberButtonColor}
-					operationButtonColor={operationButtonColor}
-					equalButtonColor={equalButtonColor}
-					clearButtonColor={clearButtonColor}
-				/>
-			);
-		case 'graphing':
-			return <div>Graphing Calculator not yet implemented</div>;
-		case 'programmer':
-			return <div>Programmer Calculator not yet implemented</div>;
-		default:
-			return <div>Type de calculatrice non reconnu</div>;
 	}
 };

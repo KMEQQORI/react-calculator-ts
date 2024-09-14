@@ -1,3 +1,6 @@
 src/
 babel.config.js
 node_modules/
+.idea/
+assets/
+examples/

@@ -5,6 +5,7 @@ interface CalculatorWrapperProps {
     operationButtonColor?: string;
     equalButtonColor?: string;
     clearButtonColor?: string;
+    scientificButtonColor?: string;
 }
 export declare const ReactCalculator: React.FC<CalculatorWrapperProps>;
 export {};

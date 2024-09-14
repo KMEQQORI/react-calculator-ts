@@ -1,18 +1,19 @@
-import './index.css';
 import React, { useState } from 'react';
+import { BsTrash } from 'react-icons/bs';
+import { FaDivide, FaEquals, FaMinus, FaPlus, FaTimes } from 'react-icons/fa';
 
-interface ReactCalculatorProps {
-	numberButtonColor?: string;
-	operationButtonColor?: string;
+interface ReactSimpleCalculatorProps {
 	equalButtonColor?: string;
-	clearButtonColor?: string;
+	numberButtonColor?: string; // Couleur des boutons numériques
+	operationButtonColor?: string; // Couleur des boutons d'opération
+	clearButtonColor?: string; // Couleur du bouton "clear"
 }
 
-export const ReactSimpleCalculator: React.FC<ReactCalculatorProps> = ({
-	numberButtonColor = '#4b5563',
-	operationButtonColor = '#ef4444',
+export const ReactSimpleCalculator: React.FC<ReactSimpleCalculatorProps> = ({
 	equalButtonColor = '#10b981',
-	clearButtonColor = '#f59e0b'
+	numberButtonColor = '#4b5563', // Couleur par défaut pour les chiffres
+	operationButtonColor = '#ef4444', // Couleur par défaut pour les opérations
+	clearButtonColor = '#f59e0b' // Couleur par défaut pour "Clear"
 }) => {
 	const [screen, setScreen] = useState('0');
 	const [firstNumber, setFirstNumber] = useState(0);
@@ -61,36 +62,79 @@ export const ReactSimpleCalculator: React.FC<ReactCalculatorProps> = ({
 		}
 	}
 
-	const NumberButton = ({ value }: { value: string }) => (
-		<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber(value)}>
-			{value}
-		</div>
-	);
-
 	return (
 		<div className="calculator">
 			<div className="screen">{screen}</div>
 			<div className="buttons">
 				<div className="button" style={{ backgroundColor: clearButtonColor }} onClick={handleClear}>
-					C
+					<BsTrash />
 				</div>
-				{['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '.'].map(num => (
-					<NumberButton key={num} value={num} />
-				))}
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('7')}>
+					7
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('8')}>
+					8
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('9')}>
+					9
+				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('/')}
+				>
+					<FaDivide />
+				</div>
 
-				{['/', '*', '-', '+'].map(op => (
-					<div
-						key={op}
-						className="button operation"
-						style={{ backgroundColor: operationButtonColor }}
-						onClick={() => handleOperation(op)}
-					>
-						{op}
-					</div>
-				))}
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('4')}>
+					4
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('5')}>
+					5
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('6')}>
+					6
+				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('*')}
+				>
+					<FaTimes />
+				</div>
 
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('1')}>
+					1
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('2')}>
+					2
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('3')}>
+					3
+				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('-')}
+				>
+					<FaMinus />
+				</div>
+
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('0')}>
+					0
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('.')}>
+					.
+				</div>
 				<div className="button" style={{ backgroundColor: equalButtonColor }} onClick={handleCalcul}>
-					=
+					<FaEquals />
+				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('+')}
+				>
+					<FaPlus />
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,7 @@
 import './index.css';
 import React, { useState } from 'react';
+import { FaPlus, FaMinus, FaTimes, FaDivide, FaEquals, FaSquareRootAlt, FaSuperscript } from 'react-icons/fa';
+import { BsTrash } from 'react-icons/bs';
 
 interface ReactScientificCalculatorProps {
 	numberButtonColor?: string;
@@ -14,7 +16,7 @@ export const ReactScientificCalculator: React.FC<ReactScientificCalculatorProps>
 	operationButtonColor = '#ef4444',
 	equalButtonColor = '#10b981',
 	clearButtonColor = '#f59e0b',
-	scientificButtonColor = '#3b82f6'
+	scientificButtonColor = '#384B70'
 }) => {
 	const [screen, setScreen] = useState('0');
 	const [firstNumber, setFirstNumber] = useState<number | null>(null);
@@ -98,34 +100,76 @@ export const ReactScientificCalculator: React.FC<ReactScientificCalculatorProps>
 			<div className="screen">{screen}</div>
 			<div className="buttons">
 				<div className="button" style={{ backgroundColor: clearButtonColor }} onClick={handleClear}>
-					C
+					<BsTrash />
 				</div>
-				{[7, 8, 9, 4, 5, 6, 1, 2, 3, 0].map(num => (
-					<div
-						key={num}
-						className="button"
-						style={{ backgroundColor: numberButtonColor }}
-						onClick={() => handleSelectNumber(num.toString())}
-					>
-						{num}
-					</div>
-				))}
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('7')}>
+					7
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('8')}>
+					8
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('9')}>
+					9
+				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('/')}
+				>
+					<FaDivide />
+				</div>
+
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('4')}>
+					4
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('5')}>
+					5
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('6')}>
+					6
+				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('*')}
+				>
+					<FaTimes />
+				</div>
+
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('1')}>
+					1
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('2')}>
+					2
+				</div>
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('3')}>
+					3
+				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('-')}
+				>
+					<FaMinus />
+				</div>
+
+				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('0')}>
+					0
+				</div>
 				<div className="button" style={{ backgroundColor: numberButtonColor }} onClick={() => handleSelectNumber('.')}>
 					.
 				</div>
-				{['/', '*', '-', '+'].map(op => (
-					<div
-						key={op}
-						className="button operation"
-						style={{ backgroundColor: operationButtonColor }}
-						onClick={() => handleOperation(op)}
-					>
-						{op}
-					</div>
-				))}
 				<div className="button" style={{ backgroundColor: equalButtonColor }} onClick={handleCalcul}>
-					=
+					<FaEquals />
 				</div>
+				<div
+					className="button operation"
+					style={{ backgroundColor: operationButtonColor }}
+					onClick={() => handleOperation('+')}
+				>
+					<FaPlus />
+				</div>
+
 				{['sqrt', 'pow', 'log', 'ln', 'sin', 'cos', 'tan'].map(func => (
 					<div
 						key={func}
@@ -133,7 +177,7 @@ export const ReactScientificCalculator: React.FC<ReactScientificCalculatorProps>
 						style={{ backgroundColor: scientificButtonColor }}
 						onClick={() => handleScientificOperation(func)}
 					>
-						{func.toUpperCase()}
+						{func === 'sqrt' ? <FaSquareRootAlt /> : func === 'pow' ? <FaSuperscript /> : func.toUpperCase()}
 					</div>
 				))}
 			</div>
