@@ -6,5 +6,5 @@ interface ReactCalculatorProps {
     equalButtonColor?: string;
     clearButtonColor?: string;
 }
-declare const ReactCalculator: React.FC<ReactCalculatorProps>;
-export default ReactCalculator;
+export declare const ReactSimpleCalculator: React.FC<ReactCalculatorProps>;
+export {};
