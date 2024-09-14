@@ -1,32 +1,36 @@
 {
-  "name": "react-calculator-ts",
-  "version": "1.0.9",
-  "main": "lib/index.js",
-  "types": "types/index.d.ts",
-  "files": [
-    "lib",
-    "types",
-    "index.css"
-  ],
-  "scripts": {
-    "build": "yarn postcss src/index.css -o lib/index.css && babel src --out-dir lib && tsc"
-  },
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.0",
-    "@babel/preset-env": "^7.13.0",
-    "@babel/preset-react": "^7.13.0",
-    "@babel/preset-typescript": "^7.13.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.41",
-    "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^4.0.0"
-  }
+	"name": "react-calculator-ts",
+	"version": "1.0.9",
+	"main": "lib/index.js",
+	"types": "types/index.d.ts",
+	"files": [
+		"lib",
+		"types",
+		"index.css"
+	],
+	"scripts": {
+		"build": "yarn postcss src/index.css -o lib/index.css && babel src --out-dir lib && tsc"
+	},
+	"peerDependencies": {
+		"react": "^17.0.0 || ^18.0.0",
+		"react-dom": "^17.0.0 || ^18.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KMEQQORI/react-calculator-ts"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.13.0",
+		"@babel/core": "^7.13.0",
+		"@babel/preset-env": "^7.13.0",
+		"@babel/preset-react": "^7.13.0",
+		"@babel/preset-typescript": "^7.13.0",
+		"@types/react": "^17.0.0",
+		"@types/react-dom": "^17.0.0",
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.4.41",
+		"postcss-cli": "^11.0.0",
+		"tailwindcss": "^3.4.10",
+		"typescript": "^4.0.0"
+	}
 }

@@ -3,7 +3,7 @@
 
 **`react-calculator-ts`** is a simple and customizable calculator component built with TypeScript and React. It provides an easy-to-use interface for basic arithmetic operations and allows developers to customize button colors via component props.
 
-![Screenshot of React Calculator](./assets/images/image.png)
+![Screenshot of React Calculator](https://raw.githubusercontent.com/KMEQQORI/react-calculator-ts/main/assets/images/image.png)
 
 ## 🚀 Installation
 
