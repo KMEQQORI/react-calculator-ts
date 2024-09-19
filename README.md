@@ -29,7 +29,7 @@ const App = () => (
   <div>
     <h1>My Calculator</h1>
     <ReactCalculator 
-      type="scientific"                 // Choose between 'simple', 'scientific', 'graphing', 'programmer'
+      type="SCIENTIFIC"                 // Choose between 'SIMPLE', 'SCIENTIFIC', 'GRAPHING', 'PROGRAMMER'
       numberButtonColor="#34d399"       // Optional: Green color for number buttons
       operationButtonColor="#f97316"    // Optional: Orange color for operation buttons
       clearButtonColor="#3b82f6"        // Optional: Blue color for the clear button
@@ -48,7 +48,7 @@ export default App;
 
 The **`ReactCalculator`** component accepts the following optional props for UI customization:
 
-- **`type` (String):** Specifies the calculator type. Supported values are `'simple'`, `'scientific'`, `'graphing'` (not implemented), and `'programmer'` (not implemented).
+- **`type` (String):** Specifies the calculator type. Supported values are `'SIMPLE'`, `'SCIENTIFIC'`, `'GRAPHING'` (not implemented), and `'PROGRAMMER'` (not implemented).
 - **`numberButtonColor` (String):** Hex or RGB color for the number buttons (default: `#4b5563`).
 - **`operationButtonColor` (String):** Hex or RGB color for the operation buttons (default: `#ef4444`).
 - **`equalButtonColor` (String):** Hex or RGB color for the equal button (default: `#10b981`).

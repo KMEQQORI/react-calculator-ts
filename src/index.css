@@ -21,10 +21,46 @@
 	color: #f3f4f6;
 	width: 100%;
 	padding: 20px;
-	font-size: 48px;
+	font-size: 42px;
 	border-radius: 8px;
-	text-align: right;
 	margin-bottom: 20px;
+}
+
+.screen-result {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+
+.screen-result-exponent {
+	font-size: 24px;
+}
+
+.screen-operation {
+	width: 300px; /* La largeur de l'écran de ta calculatrice */
+	height: 50px; /* Hauteur de l'écran */
+	overflow: hidden; /* Cache le débordement */
+	white-space: nowrap; /* Empêche le texte de passer à la ligne */
+	display: flex;
+	align-items: center;
+	justify-content: flex-start; /* Aligne à gauche */
+}
+
+#operation-text {
+	font-size: 24px;
+	display: inline-block;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	direction: ltr; /* Direction de gauche à droite */
+	unicode-bidi: plaintext; /* Affiche les chiffres correctement */
+}
+
+.screen-result {
+	width: 100%;
+	font-size: 48px;
+	text-align: right;
 }
 
 .buttons {
